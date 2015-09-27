@@ -25,9 +25,20 @@
 			var val = $(this).val();
 
 			$.ajax({
-				name:'123',
-				aa:'333'
-			});
+                url:'test.js',
+                method:'GET',
+                dataType:'json',
+                success:function(){
+                    alert('success');
+                },
+                error:function(){
+                    alert('error');
+                },
+                complete:function(){
+                    alert('complete');
+                }
+            });
+
 		});
 	});
 	</script>
