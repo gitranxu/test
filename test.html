@@ -23,7 +23,20 @@
 	$().ready(function(){
 		$('#province').change(function(){
 			var val = $(this).val();
-			
+			$.ajax({
+                                    url:'test.js',
+                                    method:'GET',
+                                    dataType:'json',
+                                    success:function(){
+                                        alert('success');
+                                    },
+                                    error:function(){
+                                        alert('error');
+                                    },
+                                    complete:function(){
+                                        alert('complete');
+                                    }
+                                });
 		});
 	});
 	</script>
