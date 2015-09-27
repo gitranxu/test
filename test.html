@@ -11,11 +11,8 @@
 		<option value="b">河北</option>
 		<option value="c">辽宁</option>
 	</select>
-	<select id="city">
+	<select id="cities">
 		<option value="">请选择</option>
-		<option value="11">11a</option>
-		<option value="22">22a</option>
-		<option value="33">33a</option>
 	</select>
 
 	<script src="./js/jquery-1.9.1.min.js"></script>
@@ -23,13 +20,14 @@
 	$().ready(function(){
 		$('#province').change(function(){
 			var val = $(this).val();
-
+			//alert(val);
 			$.ajax({
-                url:'data/a.js',
+                url:'data/'+val+'.js',
                 method:'GET',
                 dataType:'json',
                 success:function(msg){
-                    alert('success');
+                    //alert(JSON.stringify(msg));
+                    parseCities(msg);
                 },
                 error:function(){
                     alert('error');
@@ -41,6 +39,15 @@
 
 		});
 	});
+//<option value="22">66a</option>
+	function parseCities(jsonData){
+		var html = '';
+		for(var i = 0,j = jsonData.cities.length;i < j;i++){
+			html += '<option value="'+jsonData.cities[i].value+'">'+jsonData.cities[i].name+'</option>';
+		}
+		//alert(html);
+		$('#cities').empty().append(html);
+	}
 	</script>
 </body>
 </html>
