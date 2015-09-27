@@ -7,9 +7,9 @@
 <body>
 	<select id="province">
 		<option value="">请选择</option>
-		<option value="1">1a</option>
-		<option value="2">2a</option>
-		<option value="3">3a</option>
+		<option value="a">北京</option>
+		<option value="b">河北</option>
+		<option value="c">辽宁</option>
 	</select>
 	<select id="city">
 		<option value="">请选择</option>
@@ -25,17 +25,17 @@
 			var val = $(this).val();
 
 			$.ajax({
-                url:'test.js',
+                url:'data/a.js',
                 method:'GET',
                 dataType:'json',
-                success:function(){
+                success:function(msg){
                     alert('success');
                 },
                 error:function(){
                     alert('error');
                 },
                 complete:function(){
-                    alert('complete');
+                    //alert('complete');
                 }
             });
 
