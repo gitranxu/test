@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select id="province">
+		<option value="">请选择</option>
+		<option value="1">1a</option>
+		<option value="2">2a</option>
+		<option value="3">3a</option>
+	</select>
+	<select id="city">
+		<option value="">请选择</option>
+		<option value="11">11a</option>
+		<option value="22">22a</option>
+		<option value="33">33a</option>
+	</select>
+
+	<script src="./js/jquery-1.9.1.min.js"></script>
+	<script>
+	$().ready(function(){
+		$('#province').change(function(){
+			var val = $(this).val();
+			
+		});
+	});
+	</script>
+</body>
+</html>
